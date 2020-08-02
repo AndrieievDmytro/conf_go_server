@@ -9,5 +9,4 @@ docker run -d --restart unless-stopped --name psql -e POSTGRES_PASSWORD=psqlpass
 docker exec -ti psql bash
 su - postgres
 psql -c "create database gowebapp"
-cd ~
 echo Успех в коде, успех в жизни
