@@ -9,6 +9,7 @@ yes | apt install docker-ce
 docker exec --tty psql bash
 su - postgres 
 psql -c "createdb gowebapp"
+exit 0
 # echo Успех в коде, успех в жизни
 
 
