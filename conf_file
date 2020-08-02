@@ -7,5 +7,5 @@ yes | sudo apt-get install curl openssh-server apt-transport-https ca-certificat
 # sudo apt-get upgrade 
 sudo curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add - 
 add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/debian $(lsb_release -cs) stable"  
-sudo apt-get update 
+yes | sudo apt-get update 
 yes | apt install docker-ce
