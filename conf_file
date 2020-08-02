@@ -8,5 +8,5 @@ docker volume create psql
 docker run -d --restart unless-stopped --name psql -e POSTGRES_PASSWORD=psqlpass -p 5432:5432 -v psql:/var/lib/postgresql/data postgres
 docker exec -ti psql bash
 su - postgres
-createdb gowebapp
+psql -c "create database gowebapp"
 echo Успех в коде, успех в жизни
