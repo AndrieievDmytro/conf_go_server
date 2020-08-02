@@ -1,3 +1,12 @@
 #!/bin/bash
-sudo apt update upgrade | sudo apt install curl openssh-server sshd | sudo apt update upgrade | sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common | curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add - | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/debian $(lsb_release -cs) 
-stable" | apt update | apt install docker-ce
+sudo apt update 
+sudo apt upgrade 
+sudo apt install openssh-server
+sudo apt update 
+sudo apt upgrade 
+sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common 
+curl -fsSL https://download.docker.com/linux/debian/gpg 
+sudo apt-key add - 
+add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/debian $(lsb_release -cs) stable" 
+apt update 
+apt install docker-ce
