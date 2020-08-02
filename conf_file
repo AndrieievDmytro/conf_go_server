@@ -5,7 +5,7 @@ yes | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/debi
 yes | sudo apt-get update 
 yes | apt install docker-ce
 docker volume create psql
-docker run -d --restart unless-stopped --name psql -e POSTGRES_PASSWORD=psqlpass -p 5432:5432 -v psql:/var/lib/postgresql/data postgres
+# docker run -d --restart unless-stopped --name psql -e POSTGRES_PASSWORD=psqlpass -p 5432:5432 -v psql:/var/lib/postgresql/data postgres
 docker exec -ti psql bash 
 su - postgres 
 createdb gowebapp
