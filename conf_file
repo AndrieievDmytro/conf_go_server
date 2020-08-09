@@ -4,21 +4,14 @@ then
 	sudo apt -y install ssh curl openssh-server apt-transport-https ca-certificates gnupg2 software-properties-common 
 	yes | sudo curl -fsSL https://download.docker.com/linux/debian/gpg |  sudo apt-key add - 
 	yes | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/debian $(lsb_release -cs) stable"
+	echo Debian system
+else 
+	yes | sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  sudo apt-key add -
+ 	yes | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"	
+	echo Ubuntu system
 fi
-yes | sudo apt-get update 
-yes | apt install docker-ce
-docker volume create psql
-docker run -d --restart unless-stopped --name psql -e POSTGRES_PASSWORD=psqlpass -p 5432:5432 -v psql:/var/lib/postgresql/data postgres 
-wget -O - https://raw.githubusercontent.com/DmytroAndrieiev/conf_go_server/master/conf_file2 | sudo bash
-
+#yes | sudo apt-get update 
+#yes | apt install docker-ce
+#docker volume create psql
+#docker run -d --restart unless-stopped --name psql -e POSTGRES_PASSWORD=psqlpass -p 5432:5432 -v psql:/var/lib/postgresql/data postgres 
 echo Успех в коде, успех в жизни
-# yes | sudo apt-get install curl openssh-server apt-transport-https ca-certificates gnupg2 software-properties-common 
-# yes | sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  sudo apt-key add - 
-# yes | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"  
-# yes | sudo apt-get update 
-# yes | apt install docker-ce
-# docker volume create psql
-# docker run -d --restart unless-stopped --name psql -e POSTGRES_PASSWORD=psqlpass -p 5432:5432 -v psql:/var/lib/postgresql/data postgres
-# docker exec -ti psql bash | su - postgres | psql -c "create database gowebapp"
-# echo Успех в коде, успех в жизни
-fi
