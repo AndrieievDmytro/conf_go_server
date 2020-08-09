@@ -3,7 +3,7 @@ cat /etc/*release | grep -i name | grep -i debian > /dev/null; if [ $? -eq 0 ];
 then  
 	sudo apt -y install ssh curl openssh-server apt-transport-https ca-certificates gnupg2 software-properties-common 
 	yes | sudo curl -fsSL https://download.docker.com/linux/debian/gpg |  sudo apt-key add - 
-	yes | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/debian $(lsb_release -cs) stable";
+	yes | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/debian $(lsb_release -cs) stable"
 fi
 yes | sudo apt-get update 
 yes | apt install docker-ce
@@ -21,3 +21,4 @@ echo Успех в коде, успех в жизни
 # docker run -d --restart unless-stopped --name psql -e POSTGRES_PASSWORD=psqlpass -p 5432:5432 -v psql:/var/lib/postgresql/data postgres
 # docker exec -ti psql bash | su - postgres | psql -c "create database gowebapp"
 # echo Успех в коде, успех в жизни
+fi
