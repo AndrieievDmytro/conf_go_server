@@ -1,11 +1,10 @@
 #!/bin/bash
-sudo apt -y install ssh curl openssh-server apt-transport-https ca-certificates gnupg2 software-properties-common 
-cat /etc/*release | grep -i name | grep -i debian > /dev/null; if [ $? -eq 0 ]; then  
+cat /etc/*release | grep -i name | grep -i debian > /dev/null; 
+if [ $? -eq 0 ]
+then  
+	sudo apt -y install ssh curl openssh-server apt-transport-https ca-certificates gnupg2 software-properties-common 
 	yes | sudo curl -fsSL https://download.docker.com/linux/debian/gpg |  sudo apt-key add - 
 	yes | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/debian $(lsb_release -cs) stable"
-else
-	yes | sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  sudo apt-key add -
-	yes | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 fi
 yes | sudo apt-get update 
 yes | apt install docker-ce
@@ -14,9 +13,6 @@ docker run -d --restart unless-stopped --name psql -e POSTGRES_PASSWORD=psqlpass
 wget -O - https://raw.githubusercontent.com/DmytroAndrieiev/conf_go_server/master/conf_file2 | sudo bash
 
 echo Успех в коде, успех в жизни
-
-if
-
 # yes | sudo apt-get install curl openssh-server apt-transport-https ca-certificates gnupg2 software-properties-common 
 # yes | sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  sudo apt-key add - 
 # yes | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"  
