@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt -y install curl openssh-server apt-transport-https ca-certificates gnupg2 software-properties-common 
+sudo apt -y install ssh curl openssh-server apt-transport-https ca-certificates gnupg2 software-properties-common 
 cat /etc/*release | grep -i name | grep -i debian > /dev/null; 
 if [ $? -eq 0 ]
 then  
