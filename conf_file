@@ -1,11 +1,11 @@
 #!/bin/bash
-cat /etc/*release | grep -i name | grep -i debian > /dev/null; if [ $? -eq 0 ];
-then  
+VAR=`cat /etc/*release | grep -ie "^name" | sed "s/.*=\(.*\)/\1/"`;
+if [[ $VAR=="Debian GNU/Linux" ]]; then
 	sudo apt -y install ssh curl openssh-server apt-transport-https ca-certificates gnupg2 software-properties-common 
 	yes | sudo curl -fsSL https://download.docker.com/linux/debian/gpg |  sudo apt-key add - 
 	yes | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/debian $(lsb_release -cs) stable"
 	echo Debian system
-else 
+elif [[ $VAR=="Ubuntu" ]] then
 	yes | sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  sudo apt-key add -
  	yes | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"	
 	echo Ubuntu system
