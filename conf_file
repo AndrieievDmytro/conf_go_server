@@ -16,7 +16,7 @@ else
 	echo "Something went wrong"
 	exit 1
 fi
-sudo curl -fsSL https://download.docker.com/linux/${OS_NAME}/gpg |  sudo apt-key -y add - 
+sudo curl -fsSL https://download.docker.com/linux/${OS_NAME}/gpg |  sudo apt-key add - 
 add-apt-repository -y "deb [arch=amd64] http://download.docker.com/linux/${OS_NAME} $(lsb_release -cs) stable"
 
 # yes | sudo apt-get update 
