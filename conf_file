@@ -5,12 +5,13 @@ if [[ $VAR=="Debian GNU/Linux" ]]; then
 	yes | sudo curl -fsSL https://download.docker.com/linux/debian/gpg |  sudo apt-key add - 
 	yes | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/debian $(lsb_release -cs) stable"
 	echo Debian system
-elif [[ $VAR=="Ubuntu" ]]; then
+# elif [[ $VAR=="Ubuntu" ]]; then
+else
 	yes | sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  sudo apt-key add -
  	yes | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"	
 	echo Ubuntu system
-else 
-	echo "Something went wrong"
+# else 
+	# echo "Something went wrong"
 fi
 yes | sudo apt-get update 
 yes | apt install docker-ce
