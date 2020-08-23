@@ -5,13 +5,9 @@ sudo apt update
 if [ $VAR == '"Debian GNU/Linux"' ]; then
 	echo -e "Debian system\n\n"
 	OS_NAME='debian'
-	# sudo curl -fsSL https://download.docker.com/linux/debian/gpg |  sudo apt-key -y add - 
-	# add-apt-repository -y "deb [arch=amd64] http://download.docker.com/linux/debian $(lsb_release -cs) stable"
 elif [ $VAR == '"Ubuntu"' ]; then
 	echo -e "Ubuntu system\n\n"
 	OS_NAME='ubuntu'
-	# sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  sudo apt-key add -
- 	# yes | add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"	
 else 
 	echo "Something went wrong"
 	exit 1
