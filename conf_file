@@ -18,4 +18,4 @@ sudo apt -y update
 apt install -y docker-ce
 docker volume create psql
 docker run -d --restart unless-stopped --name psql -e POSTGRES_PASSWORD=psqlpass -p 5432:5432 -v psql:/var/lib/postgresql/data postgres 
-echo Успех в коде, успех в жизни
+echo "Setting Postgres DB has been done successfully" 
